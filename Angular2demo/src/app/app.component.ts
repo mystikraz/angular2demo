@@ -11,11 +11,12 @@ import { Component } from "@angular/core";
 
 @Component({//decorator to make below class as angular component provided by angular
     selector: 'my-app',
-    template: `<my-employee></my-employee>`
+    template: `
+                Name:<input [(ngModel)]='name'/>
+                <br/>
+                You entered:{{name}}
+                `
 })
 export class AppComponent { //typescript class
-    onClick(): void {
-        console.log('Button Clicked');
-    }
-
+    name: string = "Tom";
 }

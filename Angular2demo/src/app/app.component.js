@@ -16,14 +16,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.name = "Tom";
     }
-    AppComponent.prototype.onClick = function () {
-        console.log('Button Clicked');
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<my-employee></my-employee>"
+            template: "\n                Name:<input [(ngModel)]='name'/>\n                <br/>\n                You entered:{{name}}\n                "
         })
     ], AppComponent);
     return AppComponent;
