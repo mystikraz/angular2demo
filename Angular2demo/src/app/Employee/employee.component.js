@@ -9,15 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployeeComponent = (function () {
     function EmployeeComponent() {
+        this.classesToApply = 'italicClass boldClass';
+        this.pageheader = 'somthing';
         this.firstName = 'Ton';
         this.lastname = 'Hopkins';
         this.gender = 'Male';
         this.age = 20;
+        this.showDetails = false;
     }
+    EmployeeComponent.prototype.toggleDetails = function () {
+        this.showDetails = !this.showDetails;
+        console.log('Button Clicked');
+    };
     EmployeeComponent = __decorate([
         core_1.Component({
             selector: 'my-employee',
-            templateUrl: 'app/employee/employee.component.html'
+            templateUrl: 'app/Employee/employee.component.html'
         })
     ], EmployeeComponent);
     return EmployeeComponent;

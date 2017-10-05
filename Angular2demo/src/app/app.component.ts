@@ -9,23 +9,13 @@
 
 import { Component } from "@angular/core";
 
-@Component({
+@Component({//decorator to make below class as angular component provided by angular
     selector: 'my-app',
-    template: `<div>
-                    <h1>{{getFullName()}}</h1>
-                    <img src="{{imagePath}}"/>
-                     <my-employee></my-employee>
-                </div>`
+    template: `<my-employee></my-employee>`
 })
-export class AppComponent {
-    pageHeader = 'Employee Details';
-    imagePath: string = 'http://pragimtech.com/images/logo.jpg';
-
-    firstName: string = 'Tom';
-    lastName: string = 'Hopkins';
-
-    getFullName(): string {
-        return this.firstName + ' ' + this.lastName;
+export class AppComponent { //typescript class
+    onClick(): void {
+        console.log('Button Clicked');
     }
 
 }

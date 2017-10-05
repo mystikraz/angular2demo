@@ -1,4 +1,5 @@
-﻿<table>
+﻿<h1>{{pageheader?pageheader:'No Header'}}</h1>
+<table>
     <tr>
         <td>First Name</td>
         <td>{{firstName}}</td>
@@ -6,13 +7,16 @@
     <tr>
         <td>Last Name</td>
         <td>{{lastname}}</td>
-    </tr>
-    <tr>
+    </ tr>
+    <tr *ngIf="showDetails">
         <td>Gender</td>
         <td>{{gender}}</td>
     </tr>
-    <tr>
+    <tr *ngIf="showDetails">
         <td>Age</td>
         <td>{{age}}</td>
     </tr>
+   
 </table>
+<br />
+<button (click)="toggleDetails()" class="boldClass" [class]="classesToApply">{{showDetails?'Hide':'Show'}} Details</button>
