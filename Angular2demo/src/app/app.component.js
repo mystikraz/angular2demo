@@ -21,7 +21,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n                Name:<input [(ngModel)]='name'/>\n                <br/>\n                You entered:{{name}}\n                "
+            template: '<list-employee></list-employee>'
         })
     ], AppComponent);
     return AppComponent;
