@@ -1,0 +1,21 @@
+﻿h1 {
+    color: #006400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+table {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    border-collapse: collapse;
+}
+td,th {
+    border: 1px solid blue;
+}
+.italicClass {
+    font-style: italic;
+}
+.boldClass {
+    font-weight: bold;
+}
