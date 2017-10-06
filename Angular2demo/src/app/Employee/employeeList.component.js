@@ -17,9 +17,31 @@ var EmployeeListComponent = (function () {
             { code: 'emp102', name: 'Alex', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
             { code: 'emp103', name: 'Mike', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
             { code: 'emp104', name: 'Mary', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp105', name: 'Jane', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' }
+            { code: 'emp105', name: 'Jane', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' },
+            { code: 'emp106', name: 'Mane', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' }
         ];
     }
+    /* getEmployees(): void {
+         this.employees= [
+             { code: 'emp101', name: 'Tom', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
+             { code: 'emp102', name: 'Alex', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
+             { code: 'emp103', name: 'Mike', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
+             { code: 'emp104', name: 'Mary', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' },
+             { code: 'emp105', name: 'Jane', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' }
+         ];
+     }*/
+    //    trackByEmpCode(index: number, employee: any): string {
+    //        return employee.code;
+    //    }
+    EmployeeListComponent.prototype.getTotalEmployeesCount = function () {
+        return this.employees.length;
+    };
+    EmployeeListComponent.prototype.getTotalMaleEmployeesCount = function () {
+        return this.employees.filter(function (e) { return e.gender === "Male"; }).length;
+    };
+    EmployeeListComponent.prototype.getTotalFemaleEmployeesCount = function () {
+        return this.employees.filter(function (e) { return e.gender === "Female"; }).length;
+    };
     EmployeeListComponent = __decorate([
         core_1.Component({
             selector: 'list-employee',
