@@ -73,6 +73,8 @@
     <Content Include="package.json" />
     <Content Include="src\app\app.component.html" />
     <Content Include="src\app\Employee\employee.component.html" />
+    <Content Include="src\app\Employee\employeeCount.component.css" />
+    <Content Include="src\app\Employee\employeeCount.component.html" />
     <Content Include="src\app\Employee\employeeList.Component.css" />
     <Content Include="src\app\Employee\employeeList.component.html" />
     <Content Include="src\tsconfig.json" />
@@ -103,7 +105,9 @@
     <TypeScriptCompile Include="src\app\app.component2.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\Employee\employee.component.ts" />
+    <TypeScriptCompile Include="src\app\Employee\employeeCount.component.ts" />
     <TypeScriptCompile Include="src\app\Employee\employeeList.component.ts" />
+    <TypeScriptCompile Include="src\app\Employee\employeeTitle.pipe.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
