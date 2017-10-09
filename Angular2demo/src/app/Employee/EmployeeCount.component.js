@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EmployeeCountComponent = (function () {
     function EmployeeCountComponent() {
-        this.selectedRadioButtonValue = 'Female';
+        this.selectedRadioButtonValue = 'All';
         this.countRadioButtonSelectionChanged = new core_1.EventEmitter();
     }
     EmployeeCountComponent.prototype.onRadioButtonSelectionChange = function () {

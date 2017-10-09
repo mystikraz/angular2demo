@@ -7,7 +7,7 @@
 })
 export class EmployeeCountComponent {
 
-    selectedRadioButtonValue: string = 'Female';
+    selectedRadioButtonValue: string = 'All';
 
     @Output()
     countRadioButtonSelectionChanged:EventEmitter<string>=new EventEmitter<string>();
