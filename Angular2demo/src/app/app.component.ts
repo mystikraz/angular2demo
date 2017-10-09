@@ -9,10 +9,13 @@
 
 import { Component } from "@angular/core";
 
-@Component({//decorator to make below class as angular component provided by angular
+@
+Component({ //decorator to make below class as angular component provided by angular
     selector: 'my-app',
-    template: '<list-employee></list-employee>'
+    template: `Your text: <input type='text' [(ngModel)]='userText'/> <br/><br/>
+                    <simple [simpleInput]='userText'></simple>
+`
 })
 export class AppComponent { //typescript class
-    name: string = "Tom";
+   usertext:string='Pragim';
 }
