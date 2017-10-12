@@ -1,25 +1,24 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component,OnInit } from '@angular/core';
 import { IEmployee } from './employee';
+import { EmployeeService } from './employee.service';
 
 @Component({
     selector: 'list-employee',
     templateUrl: 'app/employee/employeeList.component.html',
-    styleUrls: ['app/employee/employeeList.component.css']
+    styleUrls: ['app/employee/employeeList.component.css'],
+    providers: [EmployeeService]
 
 })
-export class EmployeeListComponent {
-    employees: IEmployee[];
-    selectedEmployeeCountRadioButton:string="All";
-    constructor() {
-        this.employees = [
-            { code: 'emp101', name: 'Tom', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp102', name: 'Alex', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp103', name: 'Mike', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp104', name: 'Mary', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp105', name: 'Jane', gender: 'Female', annualSalary: 55000, dateOfBirth: '12/22/1990' },
-            { code: 'emp106', name: 'Mane', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' }
+export class EmployeeListComponent implements OnInit {
 
-        ];
+    employees: IEmployee[];
+    selectedEmployeeCountRadioButton: string = "All";
+
+//    private _employeeService: EmployeeService;
+
+
+    constructor(private _employeeService: EmployeeService) {
+//        this._employeeService = _employeeService;
     }
 
    /* getEmployees(): void {
@@ -34,6 +33,12 @@ export class EmployeeListComponent {
 //    trackByEmpCode(index: number, employee: any): string {
 //        return employee.code;
 //    }
+
+    ngOnInit(): void {
+        this.employees = this._employeeService.getEmployees();
+
+    }
+
 
     onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {
         this.selectedEmployeeCountRadioButton = selectedRadioButtonValue;
