@@ -13,6 +13,7 @@ export class EmployeeListComponent implements OnInit {
 
     employees: IEmployee[];
     selectedEmployeeCountRadioButton: string = "All";
+    statusMessage: string ='Loading data. Please wait...';
 
 //    private _employeeService: EmployeeService;
 
@@ -36,7 +37,11 @@ export class EmployeeListComponent implements OnInit {
 
     ngOnInit(): void {
         this._employeeService.getEmployees()
-            .subscribe((employeeData) => this.employees = employeeData);
+            .subscribe((employeeData) => this.employees = employeeData,
+            (error) => {
+                this.statusMessage = 'Problem with the service. Please try again after sometime.';
+                console.error(error);
+            });
 
     }
 

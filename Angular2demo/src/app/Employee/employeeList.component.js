@@ -16,6 +16,7 @@ var EmployeeListComponent = (function () {
     function EmployeeListComponent(_employeeService) {
         this._employeeService = _employeeService;
         this.selectedEmployeeCountRadioButton = "All";
+        this.statusMessage = 'Loading data. Please wait...';
         //        this._employeeService = _employeeService;
     }
     /* getEmployees(): void {
@@ -33,7 +34,10 @@ var EmployeeListComponent = (function () {
     EmployeeListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._employeeService.getEmployees()
-            .subscribe(function (employeeData) { return _this.employees = employeeData; });
+            .subscribe(function (employeeData) { return _this.employees = employeeData; }, function (error) {
+            _this.statusMessage = 'Problem with the service. Please try again after sometime.';
+            console.error(error);
+        });
     };
     EmployeeListComponent.prototype.onEmployeeCountRadioButtonChange = function (selectedRadioButtonValue) {
         this.selectedEmployeeCountRadioButton = selectedRadioButtonValue;

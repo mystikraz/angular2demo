@@ -11,7 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+require("rxjs/add/Observable/throw");
 var EmployeeService = (function () {
     function EmployeeService(_http) {
         this._http = _http;
@@ -26,8 +29,13 @@ var EmployeeService = (function () {
               { code: 'emp106', name: 'Mane', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' }
   
           ];*/
-        return this._http.get("http://localhost:13360/api/employees")
-            .map(function (response) { return response.json(); });
+        return this._http.get("http://localhost:13360/api/employeess")
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
+    EmployeeService.prototype.handleError = function (error) {
+        console.error(error);
+        return Observable_1.Observable.throw(error);
     };
     EmployeeService = __decorate([
         core_1.Injectable(),
