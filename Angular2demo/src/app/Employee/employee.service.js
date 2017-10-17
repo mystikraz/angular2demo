@@ -29,7 +29,7 @@ var EmployeeService = (function () {
               { code: 'emp106', name: 'Mane', gender: 'Male', annualSalary: 55000, dateOfBirth: '12/22/1990' }
   
           ];*/
-        return this._http.get("http://localhost:13360/api/employeess")
+        return this._http.get("http://localhost:13360/api/employees")
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };

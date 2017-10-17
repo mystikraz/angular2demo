@@ -22,7 +22,7 @@ export class EmployeeService {
 
         ];*/
 
-        return this._http.get("http://localhost:13360/api/employeess")
+        return this._http.get("http://localhost:13360/api/employees")
             .map((response: Response) => <IEmployee[]>response.json())
             .catch(this.handleError);
 
